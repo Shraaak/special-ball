@@ -1,4 +1,0 @@
-repository "special ball@tj_wechat_os_qy0zrheqbwosydekdfkdqh368@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
