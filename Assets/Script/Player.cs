@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Animator anim{ get; private set; }
+    public Rigidbody2D rb{ get; private set; }
     public PlayerStateMechine stateMachine{get; private set;}
 
     public PlayerIdleState idleState{get; private set;}
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
 
         stateMachine.Initialize(idleState);
     }
