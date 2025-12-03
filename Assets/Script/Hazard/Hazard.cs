@@ -6,10 +6,29 @@ abstract public class Hazard : MonoBehaviour
 {
     protected Collider2D hazardCollider;
     protected bool isActive = true;
-    protected void OnTriggerEnter2D(Collider2D other)
+
+    protected virtual void Awake()
     {
+        hazardCollider = GetComponent<Collider2D>();
+    }
+
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!isActive) return;
+
         Player player = other.GetComponent<Player>();
-        OnBallEnter(player);
+
+        if (player != null) OnBallEnter(player);
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D other)
+    {
+        // 子类可以重写
+    }
+    
+    protected virtual void OnTriggerExit2D(Collider2D other)
+    {
+        // 子类可以重写
     }
 
     protected abstract void OnBallEnter(Player player);

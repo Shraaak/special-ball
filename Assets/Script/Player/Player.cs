@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public PlayerFallState fallState{get; private set;}
 
     public List<Transform> dirPosition;
+    public float defaultGravityScale = 1;
 
     public float readySpeed; //ready状态左右移动的速度
 

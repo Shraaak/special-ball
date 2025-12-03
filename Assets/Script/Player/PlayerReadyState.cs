@@ -23,7 +23,7 @@ public class PlayerReadyState : PlayerState
         base.Update();
 
         Transform target = player.dirPosition[index];
-        Debug.Log(Vector3.Distance(player.transform.position, target.position));
+
         if (Vector3.Distance(player.transform.position, target.position) < 0.01f)
         {
             index ++;
