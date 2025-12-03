@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerReadyState : PlayerState
 {
     public PlayerReadyState(Player player, PlayerStateMechine stateMechine, string animBoolName):base(player, stateMechine, animBoolName){}
-
-
     int index = 0;
     public override void Enter()
     {
         base.Enter();
+
+        player.RestoreMovement();
+        player.transform.position = player.reSpwanPos.position;
+
         player.rb.gravityScale = 0;
         
     }
