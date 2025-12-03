@@ -4,8 +4,6 @@ public class PlayerState
     protected PlayerStateMechine stateMechine;
     protected Player player;
     private string animBoolName;
-    protected float xInput;
-    protected float yInput;
 
     public PlayerState(Player player, PlayerStateMechine stateMechine, string animBoolName)
     {
@@ -17,16 +15,17 @@ public class PlayerState
     public virtual void Enter()
     {
         player.anim.SetBool(animBoolName, true);
+        Debug.Log("进入"+animBoolName+"状态");
     }
 
     public virtual void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
+        
     }
 
     public virtual void Exit()
     {
         player.anim.SetBool(animBoolName, false);
+        Debug.Log("退出"+animBoolName+"状态");
     }
 }
