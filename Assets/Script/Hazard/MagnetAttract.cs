@@ -27,7 +27,6 @@ public class MagnetAttract : Hazard
     protected override void OnTriggerStay2D(Collider2D other)
     {
         if (!isActive) return;
-        print("吸");
         
         Player player = other.GetComponent<Player>();
         if (player != null && currentPlayer == null)
@@ -109,11 +108,6 @@ public class MagnetAttract : Hazard
         // 暂停重力以及速度
         currentPlayer.rb.gravityScale = 0;
         currentPlayer.rb.velocity = Vector2.zero;
-    }
-
-    private void OnMouseDown()
-    {
-        ReleasePlayer();
     }
 
     private void ReleasePlayer()

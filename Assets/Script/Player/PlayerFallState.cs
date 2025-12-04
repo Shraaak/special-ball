@@ -7,6 +7,7 @@ public class PlayerFallState : PlayerState
     {
         base.Enter();
         player.rb.gravityScale = 1;
+        player.StartCoroutine(player.LoseHpOverTime());
     }
     public override void Exit()
     {
@@ -15,5 +16,6 @@ public class PlayerFallState : PlayerState
     public override void Update()
     {
         base.Update();
+        
     }
 }

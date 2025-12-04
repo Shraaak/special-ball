@@ -21,7 +21,6 @@ public class MagnetResist : Hazard
     protected override void OnTriggerStay2D(Collider2D other)
     {
         if (!isActive) return;
-        print("推");
         
         Player player = other.GetComponent<Player>();
         if (player != null && currentPlayer == null)
@@ -62,5 +61,15 @@ public class MagnetResist : Hazard
 
         Vector2 force = -direction.normalized * forceMagnitude;
         currentPlayer.rb.AddForce(force, ForceMode2D.Force);
+    }  
+
+    private void ReleasePlayer()
+    {
+        if (currentPlayer == null) return;
+
+        // 恢复重力
+        currentPlayer.rb.gravityScale = currentPlayer.defaultGravityScale;
+
+        currentPlayer = null;
     }
 }

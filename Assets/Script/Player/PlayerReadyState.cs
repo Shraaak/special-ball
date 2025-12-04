@@ -11,6 +11,9 @@ public class PlayerReadyState : PlayerState
         base.Enter();
 
         player.RestoreMovement();
+
+        player.hp = 1;
+        
         player.transform.position = player.reSpwanPos.position;
 
         player.rb.gravityScale = 0;
@@ -42,7 +45,7 @@ public class PlayerReadyState : PlayerState
             player.readySpeed * Time.deltaTime
         );
 
-        if(Input.GetMouseButtonDown(0)) 
+        if(Input.GetKeyDown(KeyCode.Space)) 
             stateMechine.ChangeState(player.fallState);
     }
 }

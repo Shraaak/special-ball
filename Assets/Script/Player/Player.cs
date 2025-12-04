@@ -15,15 +15,30 @@ public class Player : MonoBehaviour
     public PlayerFrozenState frozenState{get; private set;}
 
     public List<Transform> dirPosition;
-    public float defaultGravityScale = 1;
 
-    public float readySpeed; //ready状态左右移动的速度
+    [Header("小球基础设置")]
+    [Tooltip("小球hp")]
+    public float hp = 1;
+    [Tooltip("小球默认重力")]
+    public float defaultGravityScale = 1;
+    [Tooltip("ready状态左右移动的速度")]
+    public float readySpeed;
+    [Tooltip("掉血时间间隔")]
+    [SerializeField] private float  interval = 1f;
+    [Tooltip("每秒掉血")]
+    public float damgeFollow = 0.04f;
 
     [Header("重生设置")]
     [Tooltip("重生点")]
     public Transform reSpwanPos;
     [Tooltip("重生时间")]
     public float reSpwanTime = 2f;
+
+    [Header("冻结设置")]
+    [Tooltip("冻结时间")]
+    public float frozenDuration = 2f;
+    [Tooltip("冻结伤害")]
+    public float frozenDamage = 0.08f;
 
     void Awake()
     {
@@ -98,5 +113,21 @@ public class Player : MonoBehaviour
             sr.enabled = true;
     }
 
+    public IEnumerator LoseHpOverTime()
+    {
+        while (true)
+        {
+            hp -= damgeFollow;  
+            print("扣血"); 
+            if (hp <= 0)
+            {
+                hp = 0;
+                stateMachine.ChangeState(dieState);
+                yield break; 
+            }
+
+            yield return new WaitForSeconds(interval); // 每固定时间一次
+        }
+    }
 
 }
