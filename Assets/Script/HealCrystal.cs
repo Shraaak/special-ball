@@ -21,7 +21,7 @@ public class HealCrystal : MonoBehaviour
 
         if(!player) return;
         
-        player.hp += 0.1f;
+        player.hp += heal;
 
         Disable();
     }

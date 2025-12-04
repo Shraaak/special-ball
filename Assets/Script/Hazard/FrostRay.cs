@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class FrostRay : Hazard
 {
     [SerializeField] private GameObject frostRay;
+    [Header("冷却时间")]
     [SerializeField] private float coolTimer = 2f;
     private bool set = true;
 
