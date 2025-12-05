@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     public List<Transform> dirPosition;
 
+    public CameraControl cameraControl;
+
     [Header("小球基础设置")]
     [Tooltip("小球hp")]
     public float hp = 1;

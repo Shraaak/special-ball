@@ -1,8 +1,11 @@
 using UnityEngine;
+
 public class ClickDetector : MonoBehaviour
 {
     public LayerMask interactLayer;
-    private bool set = true;
+
+    // 全局统一开关
+    private bool toggle = true;
 
     void Update()
     {
@@ -10,19 +13,30 @@ public class ClickDetector : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 0f, interactLayer);
+            // 比 Raycast 更适合“点击检测”
+            Collider2D col = Physics2D.OverlapPoint(mousePos, interactLayer);
 
-            if (hit.collider != null)
+            if (col != null)
             {
-                Debug.Log("点到了：" + hit.collider.name);
+                Debug.Log("点到了：" + col.name);
 
-                set = !set;
+                toggle = !toggle;
 
-                MagnetAttract attract = hit.collider.GetComponentInParent<MagnetAttract>();
-                MagnetResist resist = hit.collider.GetComponentInParent<MagnetResist>();
+                // 任意磁铁脚本都算“目标”
+                var attract = col.GetComponentInParent<MagnetAttract>();
+                var resist = col.GetComponentInParent<MagnetResist>();
 
-                if(attract) hit.collider.GetComponentInParent<MagnetAttract>().enabled = set;
-                if(resist) hit.collider.GetComponentInParent<MagnetResist>().enabled = set;
+
+                if (attract != null) 
+                {
+                    attract.GetComponentInParent<BoxCollider2D>().enabled = toggle;
+                    attract.ReleasePlayer();
+                }
+                if (resist != null) 
+                {
+                    resist.GetComponentInParent<BoxCollider2D>().enabled = toggle;
+                }
+                
             }
         }
     }

@@ -13,6 +13,8 @@ public class PlayerDieState : PlayerState
     {
         base.Enter();
         player.StartCoroutine(player.Die());
+
+        player.cameraControl.OnPlayerDie();
     }
 
     public override void Update()

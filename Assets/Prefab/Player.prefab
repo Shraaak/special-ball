@@ -223,6 +223,7 @@ MonoBehaviour:
   dirPosition:
   - {fileID: 0}
   - {fileID: 0}
+  cameraControl: {fileID: 0}
   hp: 1
   defaultGravityScale: 1
   readySpeed: 3
@@ -257,5 +258,5 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0

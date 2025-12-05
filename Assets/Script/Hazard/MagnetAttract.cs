@@ -110,7 +110,7 @@ public class MagnetAttract : Hazard
         currentPlayer.rb.velocity = Vector2.zero;
     }
 
-    private void ReleasePlayer()
+    public void ReleasePlayer()
     {
         if (currentPlayer == null) return;
 

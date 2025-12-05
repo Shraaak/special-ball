@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11abd570497e34aeaaa74f3583bc05cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnetResistForce: 10
+  magnetResistForce: 15
   magnetTransform: {fileID: 0}
 --- !u!114 &2061419262581725165
 MonoBehaviour:

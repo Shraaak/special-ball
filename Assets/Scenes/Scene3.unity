@@ -205,6 +205,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1055327692}
     - target: {fileID: 1923970362898566181, guid: e9dda8c838e6b41639ffccee24ec43db, type: 3}
+      propertyPath: cameraControl
+      value: 
+      objectReference: {fileID: 700750701}
+    - target: {fileID: 1923970362898566181, guid: e9dda8c838e6b41639ffccee24ec43db, type: 3}
       propertyPath: dirPosition.Array.data[0]
       value: 
       objectReference: {fileID: 411981448}
@@ -1159,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1234,7 +1238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9622642, g: 0.51290494, b: 0.51290494, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1294,6 +1298,7 @@ MonoBehaviour:
   midTarget: {fileID: 793736671}
   dropSpeed: 3
   followSmooth: 5
+  minFollowY: -30.93
 --- !u!81 &700750702
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1362,7 +1367,7 @@ Transform:
   m_GameObject: {fileID: 700750700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -30.93, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2142,8 +2147,8 @@ Transform:
   m_GameObject: {fileID: 1211938996}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7576, y: -15.4823, z: 0}
-  m_LocalScale: {x: 0.4501475, y: 41.00645, z: 1}
+  m_LocalPosition: {x: 2.7576, y: -14.3231, z: 0}
+  m_LocalScale: {x: 0.4501475, y: 43.323315, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758762743}
@@ -3792,7 +3797,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.505
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3969,8 +3974,8 @@ Transform:
   m_GameObject: {fileID: 2099813127}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7751, y: -15.4821, z: 0}
-  m_LocalScale: {x: 0.4851825, y: 41.00608, z: 1}
+  m_LocalPosition: {x: -2.7751, y: -14.2794, z: 0}
+  m_LocalScale: {x: 0.4851825, y: 43.413136, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758762743}

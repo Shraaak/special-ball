@@ -296,6 +296,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2030982288}
     - target: {fileID: 1923970362898566181, guid: e9dda8c838e6b41639ffccee24ec43db, type: 3}
+      propertyPath: cameraControl
+      value: 
+      objectReference: {fileID: 1882172751}
+    - target: {fileID: 1923970362898566181, guid: e9dda8c838e6b41639ffccee24ec43db, type: 3}
       propertyPath: dirPosition.Array.data[0]
       value: 
       objectReference: {fileID: 1122576226}
@@ -2517,8 +2521,8 @@ Transform:
   m_GameObject: {fileID: 1321453477}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7576, y: -5.461, z: 0}
-  m_LocalScale: {x: 0.4501475, y: 20.961254, z: 1}
+  m_LocalPosition: {x: 2.7576, y: -4.9162, z: 0}
+  m_LocalScale: {x: 0.4501475, y: 22.05124, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 717743135}
@@ -2858,8 +2862,8 @@ Transform:
   m_GameObject: {fileID: 1452354146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7751, y: -5.4852, z: 0}
-  m_LocalScale: {x: 0.4851825, y: 21.008635, z: 1}
+  m_LocalPosition: {x: -2.7751, y: -5.011, z: 0}
+  m_LocalScale: {x: 0.4851825, y: 21.956123, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 717743135}
@@ -3561,6 +3565,7 @@ MonoBehaviour:
   midTarget: {fileID: 33363121}
   dropSpeed: 3
   followSmooth: 5
+  minFollowY: -10.93
 --- !u!1001 &1884282113
 PrefabInstance:
   m_ObjectHideFlags: 0

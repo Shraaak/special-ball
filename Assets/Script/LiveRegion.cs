@@ -9,5 +9,6 @@ public class LiveRegion : MonoBehaviour
         Player player = collision.GetComponent<Player>();
 
         if(player) player.stateMachine.ChangeState(player.dieState);
+        print("超出区域死亡");
     }
 }

@@ -17,6 +17,8 @@ public class PlayerReadyState : PlayerState
         player.transform.position = player.reSpwanPos.position;
 
         player.rb.gravityScale = 0;
+
+        player.cameraControl.OnPlayerRespawn();
         
     }
     public override void Exit()
