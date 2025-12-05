@@ -7,9 +7,9 @@ public class AudioManager : MonoBehaviour
     [Header("音频资源表 ")]
     public AudioData audioData;
 
-    [Header("Audio Sources")]
-    public AudioSource bgmSource;
-    public AudioSource sfxSource;
+    //音频资源
+    private AudioSource bgmSource;
+    private AudioSource sfxSource;
 
     [Header("音量大小设置")]
     [Range(0, 1)] public float bgmVolume = 1f;

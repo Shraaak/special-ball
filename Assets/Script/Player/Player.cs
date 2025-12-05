@@ -64,6 +64,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         stateMachine.currentState.Update();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            bool isPaused = UIManager.Instance.pausePanel.activeSelf;
+            UIManager.Instance.ShowPausePanel(!isPaused);
+        }
     }
 
     public IEnumerator Die()
@@ -78,8 +84,10 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(reSpwanTime);
 
+        UIManager.Instance.ShowGameOver();
+
         //复活变成ready状态
-        stateMachine.ChangeState(readyState);
+        //stateMachine.ChangeState(readyState);
     }
 
     private void StopAllMovement()
