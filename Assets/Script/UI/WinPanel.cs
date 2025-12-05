@@ -16,6 +16,7 @@ public class WinPanel : MonoBehaviour
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             int nextSceneIndex = currentSceneIndex + 1;
             SceneManager.LoadScene(nextSceneIndex);
+            Time.timeScale = 1;
         });
     }
 }

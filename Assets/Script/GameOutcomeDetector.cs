@@ -17,9 +17,7 @@ public class GameOutcomeDetector : MonoBehaviour
             {
                 //协程播放胜利动画
 
-                int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                int nextSceneIndex = currentSceneIndex + 1;
-                SceneManager.LoadScene(nextSceneIndex);
+                UIManager.Instance.ShowWin();
             }
             else
             {
