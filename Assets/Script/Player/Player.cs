@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     [Tooltip("冻结伤害")]
     public float frozenDamage = 0.08f;
 
+
     void Awake()
     {
         stateMachine = new PlayerStateMechine();
@@ -130,6 +131,18 @@ public class Player : MonoBehaviour
 
             yield return new WaitForSeconds(interval); // 每固定时间一次
         }
+    }
+
+    [HideInInspector] public float ignorePortalUntil = 0f;
+
+    public bool CanTeleport()
+    {
+        return Time.time > ignorePortalUntil;
+    }
+
+    public void SetPortalIgnore(float duration)
+    {
+        ignorePortalUntil = Time.time + duration;
     }
 
 }
