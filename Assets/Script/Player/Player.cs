@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
         //stateMachine.ChangeState(readyState);
     }
 
-    private void StopAllMovement()
+    public void StopAllMovement()
     {
         rb.velocity = Vector2.zero;  
         rb.gravityScale = 0f;        
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         while (true)
         {
             hp -= damgeFollow;  
-            print("扣血"); 
+           
             if (hp <= 0)
             {
                 hp = 0;
