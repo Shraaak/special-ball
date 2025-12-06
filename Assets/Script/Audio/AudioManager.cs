@@ -29,7 +29,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        // 创建音源
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
+
         UpdateVolumes();
+    }
+
+    void Start()
+    {
+        PlayBGM("bgm");
     }
 
     // ======== BGM 播放（使用 key） ========

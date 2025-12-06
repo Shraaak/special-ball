@@ -45,7 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioData: {fileID: 11400000, guid: 26f0e5f6fd42740269adc4d427335c9a, type: 2}
-  bgmSource: {fileID: 0}
-  sfxSource: {fileID: 0}
   bgmVolume: 1
   sfxVolume: 1

@@ -9,9 +9,15 @@ public class TutorialTrigger1 : MonoBehaviour
     public List<string> text;
     void OnTriggerEnter2D(Collider2D collision)
     {
+        tutorialPanelObject.SetActive(true);
+        
         print("触发教程");
         TutorialPanel tutorialPanel = tutorialPanelObject.GetComponent<TutorialPanel>();
 
-        if (tutorialPanel) tutorialPanel.ShowTutorial(text);
+        if (tutorialPanel) 
+        {
+            print("显示弹窗");
+            tutorialPanel.ShowTutorial(text);
+        }
     }
 }

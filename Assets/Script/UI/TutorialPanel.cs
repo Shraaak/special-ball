@@ -9,10 +9,19 @@ public class TutorialPanel : MonoBehaviour
     public TextMeshProUGUI tutorialText;
     public List<string> initText;
 
+    [SerializeField] private bool isFirst = true;
+
     void Start()
     {
-        gameObject.SetActive(true);
-        ShowTutorial(initText);
+        if (isFirst)
+        {
+            gameObject.SetActive(true);
+            ShowTutorial(initText);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
        
     }
 
@@ -25,6 +34,7 @@ public class TutorialPanel : MonoBehaviour
     {
 
         // 播放 Show 动画
+        print("show动画");
         StartCoroutine(PlayShowAnimation());
         
         // 逐条展示文字
@@ -37,7 +47,9 @@ public class TutorialPanel : MonoBehaviour
         }
 
         // 播放 Hide 动画
+        print("hide动画");
         StartCoroutine(PlayHideAnimation());
+        Time.timeScale = 1;
 
     }
 
